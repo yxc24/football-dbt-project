@@ -1,4 +1,4 @@
-# Football Data Pipeline
+
 
 This project demonstrates a data engineering pipeline that extracts football match data from API-FOOTBALL, loads it into Google BigQuery, transforms it using dbt, and visualizes the results using Google Data Studio.
 
@@ -42,6 +42,11 @@ This project demonstrates a data engineering pipeline that extracts football mat
 ## dbt Models
 
 - `team_performance`: Aggregates team statistics from match data
+
+## Looker Visualisations
+
+### 2023 English Premier League Team Performances
+![football_team_performance](Looker_Visualisation.png)
 
 ## License
 
