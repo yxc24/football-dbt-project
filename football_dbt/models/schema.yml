@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: football_data
+    database: football-432706
+    schema: football_data
+    tables:
+      - name: matches
+
+models:
+  - name: team_performance
+    columns:
+      - name: team
+        tests:
+          - unique
+          - not_null
+      - name: total_games
+        tests:
+          - not_null
+      - name: points
+        tests:
+          - not_null

@@ -1,0 +1,28 @@
+# dbt specific
+football_dbt/target/
+football_dbt/dbt_packages/
+football_dbt/logs/
+
+# Python virtual environment
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Environment files
+.env
+
+# Logs
+logs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Sensitive information
+service_account_key.json

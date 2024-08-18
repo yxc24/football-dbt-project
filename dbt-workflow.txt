@@ -1,0 +1,31 @@
+name: dbt Workflow
+
+on:
+  schedule:
+    - cron: '0 1 * * 1'  # Run daily at 1 AM UTC
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  run_dbt:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install dependencies
+      run: |
+        pip install dbt-bigquery
+    - name: Set up dbt
+      env:
+        DBT_PROFILES_DIR: ./
+      run: |
+        echo "${{ secrets.DBT_PROFILES_YML }}" > profiles.yml
+    - name: Run dbt
+      env:
+        DBT_PROFILES_DIR: ./
+      run: |
+        cd football_dbt
+        dbt run
+        dbt test
