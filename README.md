@@ -16,13 +16,17 @@ This project demonstrates a data engineering pipeline that extracts football mat
 3. Enable the BigQuery API and create a service account with BigQuery Admin access
 4. Save the service account key as `service_account_key.json` in the project root
 5. Sign up for API-FOOTBALL on RapidAPI and get your API key
-6. Create a `.env` file with the following contents:
+6. Set up a Python virtual environment: `python -m venv venv`
+7. Activate the virtual environment:
+   - Windows: `venv\Scripts\activate`
+   - Unix or MacOS: `source venv/bin/activate`
+8. Install requirements: `pip install dbt-bigquery python-dotenv pandas requests google-cloud-bigquery`
+9. Create a `.env` file with the following contents:
    ```
    API_FOOTBALL_KEY=your_api_key_here
    GCP_PROJECT_ID=your_gcp_project_id_here
    ```
-7. Install dependencies: `pip install -r requirements.txt`
-8. Set up dbt profile in `~/.dbt/profiles.yml`
+10. Set up dbt profile in `~/.dbt/profiles.yml`
 
 ## Usage
 
@@ -35,13 +39,9 @@ This project demonstrates a data engineering pipeline that extracts football mat
    ```
 3. Set up a Google Data Studio dashboard connecting to your BigQuery dataset
 
-## Automated Workflow
+## dbt Models
 
-This project uses GitHub Actions to automatically run the dbt models weekly. The workflow can also be triggered manually.
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+- `team_performance`: Aggregates team statistics from match data
 
 ## License
 
