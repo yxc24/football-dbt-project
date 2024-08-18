@@ -37,7 +37,7 @@ This project demonstrates a data engineering pipeline that extracts football mat
 
 ## Automated Workflow
 
-This project uses GitHub Actions to automatically run the dbt models daily. The workflow can also be triggered manually.
+This project uses GitHub Actions to automatically run the dbt models weekly. The workflow can also be triggered manually.
 
 ## Contributing
 
